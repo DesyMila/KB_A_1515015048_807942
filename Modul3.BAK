@@ -32,7 +32,7 @@ adik(A,B):-usia(A,C),usia(B,D),C<D.
 
 
 goal
-cucu(Cucu,Kakek);
-kakek(Kakek,Cucu);
-ibu(Ibu,Anak);
-adik(Adik,Kakak).
+cucu(A,B);
+kakek(A,B);
+ibu(C,B);
+adik(A,B).

@@ -1,0 +1,6 @@
+a. Seseorang bernama dian
+b. atoz adalah merek mobilnya
+c. dian menyukai atoz
+d. atoz sedang dijual
+e. dapat dibeli hanya jika seseorang orang tersebut adalah X(dian) dan mobil tersebut adalah Y(atoz) dan X(dian) menyukai Y(atoz),dan mobil tersebut yang dibeli adalah Y(atoz) 
+f. Menyukai apa?.

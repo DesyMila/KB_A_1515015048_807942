@@ -1,0 +1,23 @@
+a. Ricky mempunyai hobi bermain catur.
+	hobi(ricky,catur)
+b. Embang orangnya pemalas.
+	orang(embang,malas)
+c. Yusida seorang vegetarian.
+	orang(yusida,vegetarian)
+d. Kusdiar pandai bermain gitar.
+	pandai(kusdiar,gitar)
+e. Mobil yang berwarna merah itu milik Sadek, bermerk BMW.
+	mobil(merah,Sadek,BMW)
+f. Awan seorang pemain piano, berasal dari Pontianak bersuku Jawa.
+	awan(piano,pontiana,jawa)
+g. Seseorang dikatakan baik jika mempunyai sifat penyayang dan dermawan.
+	baik(orang):-
+	      sifat(penyayang),
+	      sifat(dermawan).
+h. Seseorang dikatakan pintar jika salah satu dari Matematika atau IPA atau IPS mendapat nilai tinggi.
+	pintar(orang):-
+		tinggi(matematika);
+		tinggi(IPA);
+		tinggi(IPS).
+i. Setiap orang pasti mati.
+	orang(setiap,mati)

@@ -1,0 +1,11 @@
+Macam-macam keyword di Prolog
+1. nondeterm	: Digunakan untuk menentukan kemungkinan-kemungkinan ada sebuah fakta dari suatu predikat sepanjang program yang berjalan(default)
+2. determ	: Untuk menentukan hanya boleh ada satu fakta dari suatu predikan sepanjang program tersebut dijalankan
+3. fact		: Digunakan untuk melalui section facts
+4. goal		: Menyatakan jenis dari suatu variabel atau argumen
+5. clause	: Berfungsi untuk memberikan fakta-fakta yang ada untuk memberikan gambaran kepada VPE dalam melakukan pengujian untuk menjadi solusi dari pernyataan yang telah diberikan sebelumnya
+6. single	: menentukan hanya satu fakta dari predikat yang akan selalu ada
+7. domain	: menyatakan jenis variabel atau argumen yang diberikan
+8. nocopy	: menormalkan fungsi pemanggilan fakta yang akan mengangikat variabel ke sebuah string atau ke sebuah objek jamak
+9. predicates	: Memberikan gambaran akan kata-kata yang ada dalam program
+10.global 	: Berfungnsi sebagai penentu bahwa section facts adalah berbentuk global dalam program  

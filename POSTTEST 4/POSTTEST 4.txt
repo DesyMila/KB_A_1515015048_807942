@@ -1,0 +1,36 @@
+predicates
+  buy_car(symbol,symbol) - determ (i,o) %pendeklarasi predikat buy)car dengan tipe data dari argumen yaitu symbol,symbol dan hanya memiliki kemungkinan satu fakta dengan tipe input output
+  car(symbol,symbol,integer) - nondeterm (i,o,o)
+  colors(symbol,symbol) - nondeterm (i,i)
+
+clauses
+  buy_car(Model,Color):-
+	car(Model,Color,Price),
+	colors(Color,sexy),!,
+	Price > 25000.
+
+  car(maserati,green,25000).
+  car(corvette,black,24000).
+  car(corvette,red,26000).
+  car(porsche,red,24000).
+
+  colors(red,sexy).
+  colors(black,mean).
+  colors(green,preppy).
+
+goal
+  buy_car(corvette,Y).
+/*
+1. Pemanggil predikat buy_car dengan nilai corvette dan variabel bebas Y. Melakukan pencarian terhadap buy_car dan ditemukan kecocokan dengan klausa buy_car 
+   dengan variabel Model dan Color.
+2. Kemudian, pemenuhan bagian body dari rule. untuk itu pemanggilan sub goal yang pertama pada body dari rule dijalankan  yaitu car(Model,Color,Price), dan mencari 
+   pencocokan untuk panggilan ini. Ditemukan pencocokan dengan fakta pertama dari klausa relasi car. Disini  Color dan Price sudah diikat dengan nilai black dan 24000.
+   mengatur titik lacakbalik pada car(corvette,black,24000).
+3. Pemanggilan subgoal kedua pada body dari rule yaitu colors(Color,sexy), tidak ditemukan kecocokan dari fakta dengan fakta colors. Karena nilai dari argumen color tidak terdapat pasangan antara black dan sexy. 
+4. Lakukan lacak balik di titik terakhir yaitu car(Model,Color,Price) dan dilakukan pengubahan nilai untuk titik lacak balik menjadi car(corvette,red,2600) dengan acuan nilai corvette. ditemukan kecocokan untuk titik balik yang baru.
+5. Penggilan body dari rule ke tiga yaitu color(Color,sexy), dan ditemukan kecocokan. sehingga color memiliki nilai red,sexy. dan selanjutnya dilakukan penghentian lacak balik(!) sehinggal dilanjutkan ke proses selanjutnya
+6. Perhitungan harga. jika harga diatas 25000 maka muncul solusi jika tidak maka tidak ditemukan solusi.
+dari body rule yang ada akan didapatkan bahwa nilai buy_car(corvette,red).
+maka hasil goal adalah
+Y=red.
+*/

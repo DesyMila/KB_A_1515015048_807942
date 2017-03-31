@@ -1,0 +1,59 @@
+DOMAINS
+nama = orang(symbol,symbol) /* (Pertama , Kedua) *//*data objek dengan pendeklarasian fungctor yang diikuti 2 argumen*/
+hari_lahir = tanggal_lahir(integer,symbol,integer) /* (Hari, Bulan, Tahun) *//*data objek dengan pendeklarasian functor yang diikuti 3 parameter*/
+telepon = symbol /* Nomor telepon dengan tipe data symbol*/
+PREDICATES
+nondeterm daftar_telepon(nama,symbol,hari_lahir)/*pemberian sebuah kemungkinan untuk memunculkan kemungkian fakta dari daftar_telepon*/
+yang_ulang_tahun_bulan_ini/*pendeklarasian predikat tanpa argumen*/
+konversi_bulan(symbol,integer)/*predikat konversi_bulan dengan argumen yang bertipe data symbol dan integer*/
+cek_bulan_ulang_tahun(integer,hari_lahir)/*predikat cek_bulang_ulangtahun dengan argumen integer dan hari_lahir yang telah dideklarasikan menjadi data objek di domain*/
+cetak_orang(nama)/*predikat cetak_orang dengan argumen nama*/
+CLAUSES
+yang_ulang_tahun_bulan_ini:-/*pendeklarasian sebuah aturan diman yang_ulang_tahun_bulan_ini hanya jika*/
+write("**** Daftar Orang Yang Ulang Tahun Bulan Ini ****"),nl,
+write(" Nama Pertama\t\t Nama Kedua\n"),
+write("******************************************************"),nl,
+date(_, Bulan_ini, _), /* Ambil bulan pada sistem komputer  yang hanya berpacu pada bulan yang berada di komputer pengguna dan*/
+daftar_telepon(Orang, _, Tanggal),/*Orang yang berada di daftar_telepon memiliki Tanggal untuk hari lahirnya dan*/
+cek_bulan_ulang_tahun(Bulan_ini, Tanggal),/*variabel Bulan_ini */
+cetak_orang(Orang),/**/
+fail./*melakukan pemberhentian paksa dari suatu aturan atau rule*/
+yang_ulang_tahun_bulan_ini:- /*yang ulang tahun bulan ini hanya jika*/
+write("\n\n Tekan sembarang tombol..."),nl,
+readchar(_)./*pembacaan char yang diketikkan untuk melakukan penghentian dari proses penjalanan output program*/
+cetak_orang(orang(Pertama,Kedua)):-/*aturan dari cetak_orang yang memiliki data jamak orang yang terdiri dari dua argumen dan benar hanya hanya jika */
+write(" ",Pertama,"\t\t\t ",Kedua),nl./*menulis nama pertama dan nama kedua dan*/
+cek_bulan_ulang_tahun(Bul,tanggal_lahir(_,Bulan,_)):-/*BUl merupakan cek_bulan_ulang_tahun bulan lahir(data objek) hanya jika*/
+konversi_bulan(Bulan,Bulan1),/*Bulan merupakan Konveksi_bulan dari bulan1 dan*/
+Bul = Bulan1./* Bulan1 adalah Bulan*/
+/*pembuatan fakta tentang daftar_telepon*/
+daftar_telepon(orang(erwin,effendy),"767-8463",tanggal_lahir(3,jan,1955)).
+daftar_telepon(orang(pramudya,kurniawan),"438-8400",tanggal_lahir(5,feb,1985)).
+daftar_telepon(orang(kusdiar,prihatin),"555-5653",tanggal_lahir(3,mar, 1935)).
+daftar_telepon(orang(ui,yansen),"767-2223",tanggal_lahir(29,apr,1951)).
+daftar_telepon(orang(roland,hutagalung),"555-1212",tanggal_lahir(12,may,1962)).
+daftar_telepon(orang(andi,nuruddin),"438-8400",tanggal_lahir(17,jun,1980)).
+daftar_telepon(orang(syarif,musadek),"767-8463",tanggal_lahir(20,jun,1986)).
+daftar_telepon(orang(lidya,widyawati),"555-5653",tanggal_lahir(16,jul,1981)).
+daftar_telepon(orang(yusida,andriani),"767-2223",tanggal_lahir(10,aug,1981)).
+daftar_telepon(orang(slamet,riyadi),"438-8400",tanggal_lahir(25,sep,1981)).
+daftar_telepon(orang(nur,harjanto),"438-8400",tanggal_lahir(20,oct,1952)).
+daftar_telepon(orang(dian,marlini),"555-1212",tanggal_lahir(9,nov,1984)).
+daftar_telepon(orang(teguh,heni),"767-2223",tanggal_lahir(15,nov,1987)).
+daftar_telepon(orang(eka,ardiyanti),"438-8400",tanggal_lahir(31,dec,1981)).
+/* fakta mengenai konversi_bulan*/
+konversi_bulan(jan, 1).
+konversi_bulan(feb, 2).
+konversi_bulan(mar, 3).
+konversi_bulan(apr, 4).
+konversi_bulan(may, 5).
+konversi_bulan(jun, 6).
+konversi_bulan(jul, 7).
+konversi_bulan(aug, 8).
+konversi_bulan(sep, 9).
+konversi_bulan(oct, 10).
+konversi_bulan(nov, 11).
+konversi_bulan(dec, 12).
+GOAL
+yang_ulang_tahun_bulan_ini. /* pengeksekusian hdari yang_berulang_tahun_bulan_ini. dimana yang hasil outpunya yaitu kusdiar prihatin 
+karena kusdiar prihatin memiliki tanggal lahir yang sama dengan pengaturan waktu dari pengaturan waktu otomatis penguna */

@@ -1,0 +1,16 @@
+DOMAINS
+benda = buku(judul, pengarang) ;/*pendeklarasian dengan domain jamak campuran*/
+kuda(nama) ; kapal ;
+bukubank(saldo)/*pendeklarasian data objek jamak*/
+judul, pengarang, nama = symbol/*pendeklarasian tipe data untuk judul, pengarang, nama yang bertipe data simbol*/
+saldo = real/*tipe data real untuk saldo*/
+PREDICATES
+nondeterm milik(nama,benda)/**/
+CLAUSES
+/*Pendeklarasian fakta-fakta mengenai erwin*/
+milik(erwin, buku("Markesot Bertutur", "Emha Ainun Najib")).
+milik(erwin, kuda(buraq)).
+milik(erwin, kapal).
+milik(erwin, bukubank(1000)).
+GOAL
+milik(erwin, Benda)./**/

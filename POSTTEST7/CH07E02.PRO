@@ -1,0 +1,27 @@
+/*****************************************************************************
+
+		Copyright (c) 1984 - 2000 Prolog Development Center A/S
+
+ Project:  
+ FileName: CH07E02.PRO
+ Purpose: 
+ Written by: PDC
+ Modifyed by: Eugene Akimov
+ Comments: 
+******************************************************************************/
+
+domains
+  list = integer* /* pedeklarasian list dengan tipe data integer*/
+
+predicates
+  length_of(list,integer) - procedure (i,o) /*pendeklarasian predikat dengan nama length_of dan terdiri dari list dan integer dan merupakan procedure dengan tipe masukan dan keluaran*/
+
+clauses
+  length_of([], 0)./*pembuatan fakta dari length_of berupa list kosong dan angka 0*/
+  length_of([_|T],L):-/*aturan length_of memiliki list dengan anonim head dan T untuk tail,dan variabel L hanya jika 
+  length_of memiliki argumen T untuk list dan TailLength untuk variabel integer dan L merupakan TailLength+1*/
+	length_of(T,TailLength),
+	L = TailLength + 1.
+
+goal
+  length_of([1,2,3],L)./*melakukan perhitungan dari panjang list 1,2,3 dengan L menghasilkan 3 karena merupakan akhir dari tail list*/
